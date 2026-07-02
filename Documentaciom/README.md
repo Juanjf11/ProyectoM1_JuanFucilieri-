@@ -32,11 +32,11 @@ HTML, CSS y JS funciona directo en el navegador
 
 Generar colores en HSL es más fácil controlar que los colores salgan bonitos limitando los rangos de saturación y luminosidad.
 
-Convertir HSL a HEX internamente el cuadrado de color siempre necesita HEX para el fondo, independientemente del formato elegido.
+Convertir HSL a HEX internamente porque el cuadrado de color siempre necesita HEX para el fondo, independientemente del formato elegido.
 
 Animación solo en las tarjetas es el elemento que cambia cada vez que se genera una paleta, por eso es el lugar más normal para una animación.
 
-Toast para el microfeedback es la forma más simple y no molesta de confirmarle al usuario que su acción funcionó correctamente.
+Toast para el microfeedback es la forma simple y no molesta de confirmarle al usuario que su acción funcionó correctamente.
 
 
 

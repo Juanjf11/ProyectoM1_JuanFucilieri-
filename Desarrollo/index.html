@@ -1,41 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Generador paleta de colores</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    
-    <body>
-        <header>
-            <h1>Generador paleta de colores</h1>
-            <p>Genera paletas de colores al azar con un solo click</p>
-        </header>
-    
-        <main>
-            <section class="controles">
-                <div>
-                    <label for="cantidad">Cantidad de colores:</label>
-                    <select id="cantidad">
-                        <option value="6">6</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="formato">Formato de color:</label>
-                    <select id="formato">
-                        <option value="hsl">HSL</option>
-                        <option value="rgba">RGBA</option>
-                    </select>
-                </div>
-                    <button id="generate-btn">Generar paleta</button>
-            </section>
-            <section id="paleta"></section>
-        </main>
-        <div id="toast"></div>
-        
-        <script src="js/apppaleta.js"></script>
-    </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generador de Paletas</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Generador de Paletas</h1>
+    <p>Creá paletas de colores aleatorias al instante</p>
+  </header>
+
+  <main>
+
+    <section aria-label="Configuración de paleta" class="controls">
+
+      <div class="control-group">
+        <label for="size-select">Tamaño de paleta</label>
+        <select id="size-select" aria-label="Cantidad de colores">
+          <option value="6">6 colores</option>
+          <option value="8">8 colores</option>
+          <option value="9">9 colores</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="format-select">Formato de color</label>
+        <select id="format-select" aria-label="Formato de visualización">
+          <option value="hsl">HSL</option>
+          <option value="rgba">RGBA</option>
+        </select>
+      </div>
+
+      <button class="btn-generate" id="btn-generate" aria-label="Generar nueva paleta de colores">
+         Generar paleta
+      </button>
+
+    </section>
+
+    <section aria-label="Paleta generada" aria-live="polite">
+      <div class="palette" id="palette">
+        <div class="empty-state">
+          <span>🎨</span>
+          Hacé clic en <strong>Generar paleta</strong> para empezar
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="js/apppaleta.js"></script>
+
+</body>
 </html>
