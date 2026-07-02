@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Generador paleta de colores</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    
+    <body>
+        <header>
+            <h1>Generador paleta de colores</h1>
+            <p>Genera paletas de colores al azar con un solo click</p>
+        </header>
+    
+        <main>
+            <section class="controles">
+                <div>
+                    <label for="cantidad">Cantidad de colores:</label>
+                    <select id="cantidad">
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="formato">Formato de color:</label>
+                    <select id="formato">
+                        <option value="hsl">HSL</option>
+                        <option value="rgba">RGBA</option>
+                    </select>
+                </div>
+                    <button id="generate-btn">Generar paleta</button>
+            </section>
+            <section id="paleta"></section>
+        </main>
+        <div id="toast"></div>
+        
+        <script src="js/apppaleta.js"></script>
+    </body>
+</html>

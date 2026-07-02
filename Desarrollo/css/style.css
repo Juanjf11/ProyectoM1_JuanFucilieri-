@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0d0d14;
+  color: #f0f0f8;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem 5rem;
+}
+
+@keyframes aparecerTarjeta {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  background-color: white;
+  background-clip: text;
+}
+
+header p {
+  color: #fff;
+  margin-top: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.controles {
+  background-color: black;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+  width: 100%;
+  max-width: 680px;
+}
+
+.grupo-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: white;
+}
+
+select {
+  background-color: #0d0d14;
+  color: #f0f0f8;
+  border: 1px solid #2a2a38;
+  border-radius: 8px;
+  padding: 0.65rem 2.2rem 0.65rem 0.9rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+select:hover {
+  background-color: #410b747c;
+  border-color: #000000;
+}
+
+select:focus {
+  outline: 2px solid #000000;
+  outline-offset: 2px;
+}
+
+.btn-generate {
+  background: color grey;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 0.72rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-generate:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-generate:active {
+  transform: scale(0.97);
+}
+
+.btn-generate:focus-visible {
+  outline: 2px solid #06b6d4;
+  outline-offset: 3px;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.color-card {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #2a2a38;
+  background-color: #16161f;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  animation: aparecerTarjeta 0.35s ease both;
+}
+
+.color-card:nth-child(1) { animation-delay: 0.00s; }
+.color-card:nth-child(2) { animation-delay: 0.05s; }
+.color-card:nth-child(3) { animation-delay: 0.10s; }
+.color-card:nth-child(4) { animation-delay: 0.15s; }
+.color-card:nth-child(5) { animation-delay: 0.20s; }
+.color-card:nth-child(6) { animation-delay: 0.25s; }
+.color-card:nth-child(7) { animation-delay: 0.30s; }
+.color-card:nth-child(8) { animation-delay: 0.35s; }
+.color-card:nth-child(9) { animation-delay: 0.40s; }
+
+.color-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: #8b5cf6;
+}
+
+.color-card:focus-visible {
+  outline: 2px solid #06b6d4;
+  outline-offset: 3px;
+}
+
+.color-swatch {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  transition: filter 0.2s ease;
+}
+
+.color-card:hover .color-swatch {
+  filter: brightness(1.5);
+}
+
+.color-info {
+  padding: 0.8rem 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  background-color: #16161f;
+}
+
+.hex-code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #f0f0f8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copy-icon {
+  width: 16px;
+  height: 16px;
+  color: #7070a0;
+  flex-shrink: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.color-card:hover .copy-icon {
+  color: #06b6d4;
+  transform: scale(1.2);
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #7070a0;
+  padding: 4rem 2rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  border: 1px dashed #2a2a38;
+  border-radius: 12px;
+}
+
+.empty-state span {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+#toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: grey;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  pointer-events: none;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 999;
+  white-space: nowrap;
+}
+
+#toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
