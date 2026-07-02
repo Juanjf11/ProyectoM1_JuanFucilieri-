@@ -60,7 +60,6 @@ function crearColor(formato) {
   if (formato === 'rgba') {
     codigoVisible = convertirHSLaRGBA(color.tono, color.saturacion, color.luminosidad);
   } else {
-    // Si no es RGBA, mostramos HSL
     codigoVisible = convertirAHSL(color.tono, color.saturacion, color.luminosidad);
   }
 
